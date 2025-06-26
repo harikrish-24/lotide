@@ -1,3 +1,5 @@
+
+//assertEqual function
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
@@ -6,24 +8,22 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const countLetters = function(sentence) {
-    const results = {};
-    for (const letter of sentence) {
-        if (letter !== " ") {
-            if (results[letter]){
-                results[letter] += 1;
-            }else {
-                results[letter] = 1;
-            }
-        }
-    }
-    return results;
-};
-console.log(countLetters("LHL"));
-const result1 = countLetters("hello");
-assertEqual(result1["h"], 1);
-assertEqual(result1["e"], 1);
-assertEqual(result1["l"], 2);
-assertEqual(result1["o"], 1);
+// added countLetters function
+const countLetters = function(sentences) {
+  const results = {};
 
-module.exports = countLetters;
+  //using loops
+  for (const letter of sentences) {
+    if (letter !== ' '){
+      if (results[letter]) {
+        results[letter] += 1;
+      } else {
+        results[letter] = 1;
+      }
+    }
+  } 
+  return results;
+} 
+const result = countLetters("LHL");
+assertEqual(result["L"], 2);
+assertEqual(result["H"], 1);
