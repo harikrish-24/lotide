@@ -1,3 +1,5 @@
+
+//add assertEqual function
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
@@ -6,7 +8,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
+//added findKeyByValue function
 const findKeyByValue = function(obj, value) {
   for (const key in obj) {
     if (obj[key] === value) {
